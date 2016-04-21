@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TAROT</title>
+    <script src="jquery-2.2.3.min.js"></script>
+    <script src="image-picker-master/image-picker/image-picker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="image-picker-master/image-picker/image-picker.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+</head>
+<body>
+<!-- Header -->
+<div class="w3-container w3-center w3-padding-hor-32">
+    <h1><b>TAROT</b></h1>
+    <p>Simplificateur du jeu de tarot</p>
+</div>
+<!-- Blog entries -->
+<div class="w3-col 32 s12">
+    <!-- Blog entry -->
+    <div class="w3-card-4 w3-margin w3-white">
+        <img src="images/cards.jpg" alt="Nature" style="width:100%">
+        <div class="w3-container w3-padding-hor-8">
+            <h3><b>CALCULETTE DE POINTS</b></h3>
+            <h5>Rentrez ici vos données</h5>
+        </div>
+        <form action="#">
+        <div class="w3-container">
+            <hr>
+
+            <p>Nombre de joueurs</p>
+            <p>
+                <input class="w3-radio" type="radio" name="player" value="3" checked>
+                <label class="w3-validate">3</label></p>
+
+            <p>
+                <input class="w3-radio" type="radio" name="player" value="4">
+                <label class="w3-validate">4</label></p>
+
+            <p>
+                <input class="w3-radio" type="radio" name="player" value="5">
+                <label class="w3-validate">5</label></p>
+            <hr>
+            <p>Annonce</p>
+            <p>
+                <input class="w3-radio" type="radio" name="announce" value="prise" checked>
+                <label class="w3-validate">Prise</label></p>
+
+            <p>
+                <input class="w3-radio" type="radio" name="announce" value="garde">
+                <label class="w3-validate">Garde</label></p>
+
+            <p>
+                <input class="w3-radio" type="radio" name="announce" value="garde_sans">
+                <label class="w3-validate">Garde Sans</label></p>
+
+            <p>
+                <input class="w3-radio" type="radio" name="announce" value="garde_contre">
+                <label class="w3-validate">Garde Contre</label></p>
+            <hr>
+            <p>
+                <input class="w3-check" type="checkbox" name="chelem">
+                <label class="w3-validate">Chelem</label>
+            </p>
+            <hr>
+            <p>Les cartes que vous avez ramassé</p>
+                <select multiple="multiple" class="image-picker show-html" name="cards">
+                    <option class="card" data-img-src="images/C1.png" value="C1">C1</option>
+                    <option class="card" data-img-src="images/C2.png" value="C2">C2</option>
+                    <option class="card" data-img-src="images/C3.png" value="C3">C3</option>
+                    <option class="card" data-img-src="images/C4.png" value="C4">C4</option>
+                    <option class="card" data-img-src="images/C5.png" value="C5">C5</option>
+                    <option class="card" data-img-src="images/C6.png" value="C6">C6</option>
+                    <option class="card" data-img-src="images/C7.png" value="C7">C7</option>
+                    <option class="card" data-img-src="images/C8.png" value="C8">C8</option>
+                    <option class="card" data-img-src="images/C9.png" value="C9">C9</option>
+                    <option class="card" data-img-src="images/C10.png" value="C10">C10</option>
+                    <option class="card" data-img-src="images/CV.png" value="CV">CV</option>
+                    <option class="card" data-img-src="images/CC.png" value="CC">CC</option>
+                    <option class="card" data-img-src="images/CQ.png" value="CQ">CQ</option>
+                    <option class="card" data-img-src="images/CK.png" value="CK">CK</option>
+                    <br/>
+                    <option class="card" data-img-src="images/D1.png" value="D1">D1</option>
+                    <option class="card" data-img-src="images/D2.png" value="D2">D2</option>
+                    <option class="card" data-img-src="images/D3.png" value="D3">D3</option>
+                    <option class="card" data-img-src="images/D4.png" value="D4">D4</option>
+                    <option class="card" data-img-src="images/D5.png" value="D5">D5</option>
+                    <option class="card" data-img-src="images/D6.png" value="D6">D6</option>
+                    <option class="card" data-img-src="images/D7.png" value="D7">D7</option>
+                    <option class="card" data-img-src="images/D8.png" value="D8">D8</option>
+                    <option class="card" data-img-src="images/D9.png" value="D9">D9</option>
+                    <option class="card" data-img-src="images/D10.png" value="D10">D10</option>
+                    <option class="card" data-img-src="images/DV.png" value="DV">DV</option>
+                    <option class="card" data-img-src="images/DC.png" value="DC">DC</option>
+                    <option class="card" data-img-src="images/DQ.png" value="DQ">DQ</option>
+                    <option class="card" data-img-src="images/DK.png" value="DK">DK</option>
+                    <br/>
+                    <option class="card" data-img-src="images/S1.png" value="S1">S1</option>
+                    <option class="card" data-img-src="images/S2.png" value="S2">S2</option>
+                    <option class="card" data-img-src="images/S3.png" value="S3">S3</option>
+                    <option class="card" data-img-src="images/S4.png" value="S4">S4</option>
+                    <option class="card" data-img-src="images/S5.png" value="S5">S5</option>
+                    <option class="card" data-img-src="images/S6.png" value="S6">S6</option>
+                    <option class="card" data-img-src="images/S7.png" value="S7">S7</option>
+                    <option class="card" data-img-src="images/S8.png" value="S8">S8</option>
+                    <option class="card" data-img-src="images/S9.png" value="S9">S9</option>
+                    <option class="card" data-img-src="images/S10.png" value="S10">S10</option>
+                    <option class="card" data-img-src="images/SV.png" value="SV">SV</option>
+                    <option class="card" data-img-src="images/SC.png" value="SC">SC</option>
+                    <option class="card" data-img-src="images/SQ.png" value="SQ">SQ</option>
+                    <option class="card" data-img-src="images/SK.png" value="SK">SK</option>
+                    <br/>
+                    <option class="card" data-img-src="images/H1.png" value="H1">H1</option>
+                    <option class="card" data-img-src="images/H2.png" value="H2">H2</option>
+                    <option class="card" data-img-src="images/H3.png" value="H3">H3</option>
+                    <option class="card" data-img-src="images/H4.png" value="H4">H4</option>
+                    <option class="card" data-img-src="images/H5.png" value="H5">H5</option>
+                    <option class="card" data-img-src="images/H6.png" value="H6">H6</option>
+                    <option class="card" data-img-src="images/H7.png" value="H7">H7</option>
+                    <option class="card" data-img-src="images/H8.png" value="H8">H8</option>
+                    <option class="card" data-img-src="images/H9.png" value="H9">H9</option>
+                    <option class="card" data-img-src="images/H10.png" value="H10">H10</option>
+                    <option class="card" data-img-src="images/HV.png" value="HV">HV</option>
+                    <option class="card" data-img-src="images/HC.png" value="HC">HC</option>
+                    <option class="card" data-img-src="images/HQ.png" value="HQ">HQ</option>
+                    <option class="card" data-img-src="images/HK.png" value="HK">HK</option>
+                    <br/>
+                    <option class="card" data-img-src="images/A1.png" value="A1">A1</option>
+                    <option class="card" data-img-src="images/A2.png" value="A2">A2</option>
+                    <option class="card" data-img-src="images/A3.png" value="A3">A3</option>
+                    <option class="card" data-img-src="images/A4.png" value="A4">A4</option>
+                    <option class="card" data-img-src="images/A5.png" value="A5">A5</option>
+                    <option class="card" data-img-src="images/A6.png" value="A6">A6</option>
+                    <option class="card" data-img-src="images/A7.png" value="A7">A7</option>
+                    <option class="card" data-img-src="images/A8.png" value="A8">A8</option>
+                    <option class="card" data-img-src="images/A9.png" value="A9">A9</option>
+                    <option class="card" data-img-src="images/A10.png" value="A10">A10</option>
+                    <option class="card" data-img-src="images/A11.png" value="A11">A11</option>
+                    <option class="card" data-img-src="images/A12.png" value="A12">A12</option>
+                    <option class="card" data-img-src="images/A13.png" value="A13">A13</option>
+                    <option class="card" data-img-src="images/A14.png" value="A14">A14</option>
+                    <option class="card" data-img-src="images/A15.png" value="A15">A15</option>
+                    <option class="card" data-img-src="images/A16.png" value="A16">A16</option>
+                    <option class="card" data-img-src="images/A17.png" value="A17">A17</option>
+                    <option class="card" data-img-src="images/A18.png" value="A18">A18</option>
+                    <option class="card" data-img-src="images/A19.png" value="A19">A19</option>
+                    <option class="card" data-img-src="images/A20.png" value="A20">A20</option>
+                    <option class="card" data-img-src="images/A21.png" value="A21">A21</option>
+                    <option class="card" data-img-src="images/AE.png" value="AE">AE</option>
+                </select>
+            <hr>
+            <p>Serveur a utiliser</p>
+            <p>
+                <input class="w3-radio" type="radio" name="server" value="rest" checked>
+                <label class="w3-validate">REST</label></p>
+            <p>
+                <input class="w3-radio" type="radio" name="server" value="SOAP">
+                <label class="w3-validate">SOAP</label></p>
+            <hr>
+            <div class="w3-row">
+                <div class="w3-col m8 s12">
+                    <p><button class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black"><b>CALCULER</b></button></p>
+                </div>
+                <!--<div class="w3-col m4 w3-hide-small">
+                    <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+                </div>-->
+            </div>
+        </div>
+        </form>
+    </div>
+    <hr>
+</div>
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js"></script>
+</body>
+</html>
