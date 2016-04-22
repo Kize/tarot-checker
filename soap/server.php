@@ -15,8 +15,8 @@ class server {
 
 	}
 
-	public function checkIsWinner($name, $bidding, $stack, $nb_players, $is_announced_chelem) {
-		return Checker::checkIsWinner($name, $bidding, $stack, $nb_players, $is_announced_chelem);
+	public function checkIsWinner($bidding, $stack, $nb_players, $is_announced_chelem) {
+		return Checker::checkIsWinner($bidding, $stack, $nb_players, $is_announced_chelem);
 	}
 
 }

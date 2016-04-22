@@ -8,8 +8,14 @@
 
 include '../tarotchecker.php';
 
-$postdata = file_get_contents("php://input");
-$data = json_decode($postdata);
+$bidding = $_POST["bid"];
+$stack = $_POST["stack"];
+$nb_players = $_POST["nb"];
+$is_chelem = $_POST["is_chelem"];
+
+$is_chelem = ($is_chelem === "true") ? true : false;
 
 
-echo Checker::checkIsWinner($data[0], $data[1], $data[2], $data[3], $data[4]);
+$res = Checker::checkIsWinner($bidding, $stack, $nb_players, $is_chelem);
+
+echo json_encode($res);

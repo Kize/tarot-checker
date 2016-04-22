@@ -24,18 +24,31 @@
     var click = function(){
         // Retrieve the picker
 
-        console.log($("form input.player[type='radio']:checked").val());
-        console.log($("form input.announce[type='radio']:checked").val());
-        console.log($("form input.chelem[type='checkbox']").is(":checked"));
-        console.log(cards);
-        console.log($("form input.server[type='radio']:checked").val());
-        /*$.get(
-            "somepage.php",
-            {paramOne : 1, paramX : 'abc'},
-            function(data) {
-                alert('page content: ' + data);
-            }
-        );*/
+        var mod = $("form input.server[type='radio']:checked").val();
+        console.log(mod);
+
+        var url;
+        if (mod === "rest") {
+            url = "rest/checker.php";
+        } else {
+            url = "soap/service.php";
+        }
+
+        var bidding = $("form input.announce[type='radio']:checked").val();
+        var nb_players = $("form input.player[type='radio']:checked").val();
+        var chelem = $("form input.chelem[type='checkbox']").is(":checked");
+
+        var params = {
+            bid : bidding,
+            stack : cards,
+            nb : nb_players,
+            is_chelem : chelem
+        };
+        //console.log(params);
+
+        $.post( url, params, function( data ) {
+            console.log( data );
+        }, "json");
 
     };
 

@@ -10,7 +10,7 @@ class Checker {
 	private function __construct() {
 	}
 
-	public static function checkIsWinner($name, $bidding, $stack, $nb_players, $is_announced_chelem) {
+	public static function checkIsWinner($bidding, $stack, $nb_players, $is_announced_chelem) {
 		// Count the stack, return infos
 		$status = Checker::computeStack($stack);
 		$score = $status[0];
@@ -63,26 +63,19 @@ class Checker {
 		if ($is_full_loose) {
 			$contract -= 200;
 		}
-		
-		$str = $name . " ";
-		if ($differential < 0) {
-			$str .= "lost, he made : " . $score . ", and should make : " . $score_to_do . "(" . $nb_oudlers . " oudlers)";
-			$str .= "\n";
-			$str .= $name . " score : " . (0 - ($contract*($nb_players - 1)));
-		} else {
-			$str .= "win, he made : " . $score . ", for : " . $score_to_do . "(" . $nb_oudlers . " oudlers)";
-			$str .= "\n";
-			$str .= $name . " score : " . $contract*($nb_players - 1);
-		}
-		
-		return $str;
-		/*$str = "cards : ";
 
-		foreach($stack as $card) {
-			$str .= " - " . $card;
-		}
+		$points = ($differential < 0) ? (0 - ($contract*($nb_players - 1))) : $contract*($nb_players - 1);
 
-		$str .= " | score :" . $score . " | score to do : " . $score_to_do;*/
+		$result = array(
+			"diff" 			=> $differential,
+			"score"			=> $score,
+			"scoreToDo"		=> $score_to_do,
+			"points"		=> $points,
+			"nb_oudlers" 	=> $nb_oudlers,
+			"is_chelem"		=> $is_chelem
+		);
+
+		return $result;
 	}
 	
 	private static function computeChelem($count, $excuse) {
