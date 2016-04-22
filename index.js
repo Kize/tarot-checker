@@ -20,18 +20,15 @@
     li.css("clear","both");
     var li = $("ul li:nth-child(57)");
     li.css("clear","both");
-    /*index = 1;
-    while(li = li.next() && li != undefined){
-        index++;
-        if(index % 14 == 0 && index <= 56){
-            li.after("<br/>");
-        }
-    }*/
 
     var click = function(){
         // Retrieve the picker
-        var data = $("select").data('picker');
 
+        console.log($("form input.player[type='radio']:checked").val());
+        console.log($("form input.announce[type='radio']:checked").val());
+        console.log($("form input.chelem[type='checkbox']").is(":checked"));
+        console.log(cards);
+        console.log($("form input.server[type='radio']:checked").val());
         /*$.get(
             "somepage.php",
             {paramOne : 1, paramX : 'abc'},
@@ -40,8 +37,6 @@
             }
         );*/
 
-
-        console.log(data);
     };
 
     $("#submit").click(click);
