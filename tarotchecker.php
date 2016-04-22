@@ -40,11 +40,11 @@ class Checker {
 		
 		// Set the coef in function of the bidding
 		$coeff = 1;
-		if (strcmp($bidding, "guard") == 0 ){
+		if (strcmp($bidding, "garde") == 0 ){
 			$coeff = 2;
-		} elseif (strcmp($bidding, "without") == 0 ){
+		} elseif (strcmp($bidding, "garde_sans") == 0 ){
 			$coeff = 4;
-		} elseif (strcmp($bidding, "with") == 0 ){
+		} elseif (strcmp($bidding, "garde_contre") == 0 ){
 			$coeff = 6;
 		}
 		
@@ -100,20 +100,20 @@ class Checker {
 		$has_excuse = false;
 		
 		foreach($stack as $card) {
-			if (strcmp($card, "TE") == 0) {
+			if (strcmp($card, "AE") == 0) {
 				$has_excuse = true;
 			}
 			$card_type = substr($card, 0,1);
 			$card_number = substr($card, 1);
 			
-			if (strcmp($card_type, "T") == 0) {
+			if (strcmp($card_type, "A") == 0) {
 				if (strcmp($card_number, "1") == 0 || strcmp($card_number, "21") == 0 || strcmp($card_number, "E") == 0) {
 					$nb_oudlers ++;
 					$score += 4;
 				}
 				$score += 0.5;
 			} else {
-				if (strcmp($card_number, "J") == 0) {
+				if (strcmp($card_number, "V") == 0) {
 					$score += 1;
 				} elseif (strcmp($card_number, "C") == 0) {
 					$score += 2;

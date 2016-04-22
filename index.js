@@ -7,7 +7,7 @@
 
     var changed = function(value_before, value_after){
         cards = value_after;
-    }
+    };
 
     $("select").imagepicker({
         changed : changed
@@ -31,7 +31,18 @@
     var click = function(){
         // Retrieve the picker
         var data = $("select").data('picker');
+
+        /*$.get(
+            "somepage.php",
+            {paramOne : 1, paramX : 'abc'},
+            function(data) {
+                alert('page content: ' + data);
+            }
+        );*/
+
+
         console.log(data);
-    }
-    $("button").click(click);
+    };
+
+    $("#submit").click(click);
 })();
