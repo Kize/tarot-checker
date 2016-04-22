@@ -22,10 +22,7 @@
     li.css("clear","both");
 
     var click = function(){
-        // Retrieve the picker
-
         var mod = $("form input.server[type='radio']:checked").val();
-        console.log(mod);
 
         var url;
         if (mod === "rest") {
@@ -44,9 +41,19 @@
             nb : nb_players,
             is_chelem : chelem
         };
-        //console.log(params);
 
         $.post( url, params, function( data ) {
+            if (data && data.diff) {
+                var str = "The player has ";
+                if (data.diff > 0) {
+                    str += "won ! ";
+                } else {
+                    str += "lost. ";
+                }
+                str += "score : " + data.score + "/" + data.scoreToDo + "(" + data.nb_oudlers + " oudlers) - Points : " + data.points;
+
+                $("#result").text(str);
+            }
             console.log( data );
         }, "json");
 
