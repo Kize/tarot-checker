@@ -11,6 +11,10 @@ class Checker {
 	}
 
 	public static function checkIsWinner($bidding, $stack, $nb_players, $is_announced_chelem) {
+		$stack = explode(",", $stack);
+		$is_announced_chelem = ($is_announced_chelem === "true") ? true : false;
+		$nb_players = intval($nb_players);
+
 		// Count the stack, return infos
 		$status = Checker::computeStack($stack);
 		$score = $status[0];
