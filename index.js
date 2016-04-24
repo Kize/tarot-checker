@@ -22,6 +22,9 @@
     li.css("clear","both");
 
     var click = function(){
+        var d1 = performance.now();
+        var d2, ti;
+
         var mod = $("form input.server[type='radio']:checked").val();
 
         var bidding = $("form input.announce[type='radio']:checked").val();
@@ -38,8 +41,6 @@
             }
 
         }
-
-
 
         var url;
         if (mod === "rest") {
@@ -64,6 +65,10 @@
                     $("#result").text(str);
                 }
                 console.log( data );
+
+                d2 = performance.now();
+                ti = d2 -d1;
+                console.log("REST : " + ti + "ms.");
             }, "json");
 
 
@@ -129,11 +134,16 @@
 
                 $("#result").text(str);
 
+                d2 = performance.now();
+                ti = d2 -d1;
+                console.log("SOAP : " + ti + "ms.");
+
             });
 
             req.fail(function(msg){
                 console.log(msg);
             });
+
 
         }
 
