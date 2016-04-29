@@ -5,11 +5,23 @@
  * User: Alban
  * Date: 20/04/2016
  * Time: 16:17
+ * Static class to check and compute the score of a player in the famous card game
+ * The french tarot
  */
 class Checker {
 	private function __construct() {
 	}
 
+	/**
+	 * Check if the player won this game, and returns the score.
+	 *
+	 * @param $bidding : Type of bid (accepted values : petite, garde, garde_sans, garde_contre
+	 * @param $stack : String, list of cards taken by the player
+	 * @param $nb_players : number of players
+	 * @param $is_announced_chelem : Boolean, true if the player has announced a chelem
+	 *
+	 * @return array : List of data
+	 */
 	public static function checkIsWinner($bidding, $stack, $nb_players, $is_announced_chelem) {
 		$stack = explode(",", $stack);
 		$is_announced_chelem = ($is_announced_chelem === "true") ? true : false;
@@ -81,7 +93,7 @@ class Checker {
 
 		return $result;
 	}
-	
+
 	private static function computeChelem($count, $excuse) {
 		if ($excuse){
 			$nb_expected_cards = 78;

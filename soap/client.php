@@ -5,7 +5,12 @@
  * User: Alban
  * Date: 20/04/2016
  * Time: 11:15
+ *
+ * SOAP CLIENT PHP - Can be used to call a method on the SOAP Server PHP
  */
+
+
+
 class client {
 	public function __construct() {
 		$params = array('location' => 'http://localhost/tarot-checker/soap/server.php',

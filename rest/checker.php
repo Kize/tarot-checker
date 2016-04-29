@@ -4,6 +4,8 @@
  * User: Alban
  * Date: 20/04/2016
  * Time: 16:16
+ *
+ * REST SERVER - access via AJAX, check if the player won a game of tarot
  */
 
 include '../tarotchecker.php';

@@ -4,6 +4,10 @@
  * User: Alban
  * Date: 20/04/2016
  * Time: 11:15
+ *
+ * Service to call in AJAX if the web client wants to use the PHP Client SOAP
+ *
+ * Unused in the current example
  */
 
 include './client.php';

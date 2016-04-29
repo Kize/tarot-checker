@@ -120,7 +120,6 @@
                         }
                     }
 
-                    //console.log(el.item.key._, el.item.value._);
                 });
 
                 console.log(msg);

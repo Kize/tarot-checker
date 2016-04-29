@@ -5,6 +5,9 @@
  * User: Alban
  * Date: 20/04/2016
  * Time: 11:15
+ *
+ * SOAP Server - Create a SOAP Server in PHP
+ * URI associated - tarot-checker/soap/server.php
  */
 
 ini_set("soap.wsdl_cache_enabled","0");
